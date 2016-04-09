@@ -1,0 +1,60 @@
+﻿<Window x:Class="KonkukCommunicationDesign.SettingWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="환경 설정" Height="480.066" Width="734" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="182*"/>
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
+        <Grid Margin="0,1,1,396" Background="#FFEDEDED" Grid.ColumnSpan="2">
+            <Label Content="환경 설정" HorizontalAlignment="Left" VerticalAlignment="Center" Height="43" Width="530" FontSize="20"/>    
+        </Grid>
+        <Label Name="valueFPS" Content="15" HorizontalAlignment="Left" Margin="445,64,0,0" VerticalAlignment="Top" Width="57" Height="26"/>
+        
+        <Label Content="화면 갱신 주기(FPS)" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,64,0,0" Height="26" Width="117"/>
+        <Slider Name="sldFPS" HorizontalAlignment="Left" VerticalAlignment="Top" Width="298" Margin="142,68,0,0" Maximum="60" Minimum="12" SmallChange="1" Value="12" ValueChanged="Slider_ValueChanged_1" Height="22"/>
+
+
+        <!-- 인식 거리 조절 -->
+        <Label x:Name="lblCeilingRecogDist" Content="100mm 부터 인식" HorizontalAlignment="Left" Margin="383,116,0,0" VerticalAlignment="Top" Width="137" Height="26"/>
+        <Label x:Name="lblWallRecogDist" Content="300mm 부터 인식" HorizontalAlignment="Left" Margin="383,156,0,0" VerticalAlignment="Top" Width="137" Height="26"/>
+        <Button x:Name="btnInitCeilingDepth" Content="천장 깊이 초기화" HorizontalAlignment="Left" Margin="332,200,0,0" VerticalAlignment="Top" Width="175" Click="btnInitCeilingDepth_Click_1" Height="22"/>
+        <Button Name="btnInitWallDepth" Content="벽면 깊이 초기화" HorizontalAlignment="Left" Margin="141,200,0,0" VerticalAlignment="Top" Width="175" Click="btnInitWallDepth_Click" Height="22"/>
+        <Slider x:Name="sldCeilingRecogDist" HorizontalAlignment="Left" VerticalAlignment="Top" Width="226" Margin="142,116,0,0" Maximum="200" Minimum="10" SmallChange="1" Value="100" ValueChanged="sldCeilingRecogDist_ValueChanged_1" Height="22"/>
+        <Slider x:Name="sldWallRecogDist" HorizontalAlignment="Left" VerticalAlignment="Top" Width="226" Margin="142,160,0,0" Maximum="1000" Minimum="50" SmallChange="1" Value="300" ValueChanged="sldWallRecogDist_ValueChanged_1" Height="22"/>
+        <Label Content="천장 깊이 인식 거리" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,116,0,0" Height="26" Width="119"/>
+        <Label Content="벽면 깊이 인식 거리" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,155,0,0" Height="27" Width="119"/>
+        <Button Content="닫기" HorizontalAlignment="Left" Margin="596,395,0,0" VerticalAlignment="Top" Width="110" Click="Button_Click_1" Height="40"/>
+        <Label Content="센서 깊이 정보 초기화" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,197,0,0" Height="25" Width="131"/>
+        <GroupBox Header="키넥트 각도 조절" HorizontalAlignment="Left" Margin="596,61,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Height="298" Width="115">
+            <Grid>
+                <Slider HorizontalAlignment="Left" Margin="37,41,0,0" VerticalAlignment="Top" Width="28" Orientation="Vertical" Height="201" x:Name="sliderAngleOnWall"  SmallChange="1" Maximum="27" Minimum="-27" ValueChanged="sliderAngleOnWall_ValueChanged" LargeChange="1"/>
+                <Label Name="lblWallAngle" Content="  -" HorizontalAlignment="Left" Margin="30,240,0,0" VerticalAlignment="Top"/>
+                <Label Content="벽면" HorizontalAlignment="Left" Margin="31,10,0,0" VerticalAlignment="Top" Width="38"/>
+
+
+            </Grid>
+        </GroupBox>
+        <Button Name="btnMoveToPrimary" Click="btnMoveToPrimary_Click_1" Content="첫 번째 디스플레이에 천장 배치" HorizontalAlignment="Left" Margin="142,242,0,0" VerticalAlignment="Top" Width="209"/>
+        <Button Name="btnMoveToSecondary" Click="btnMoveToSecondary_Click_1" Content="두 번째 디스플레이에 천장 배치" HorizontalAlignment="Left" Margin="364,242,0,0" VerticalAlignment="Top" Width="209"/>
+        <Label Content="창 배치 위치 설정" HorizontalAlignment="Left" Margin="10,238,0,0" VerticalAlignment="Top" Height="26" Width="115"/>
+        <TextBox Name="lblOriginY" HorizontalAlignment="Left" Height="23" Margin="74,288,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="lblScaleY"  HorizontalAlignment="Left" Height="23" Margin="271,288,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <Button Content="Adjust Transform" HorizontalAlignment="Left" Margin="421,287,0,0" VerticalAlignment="Top" Width="114" Click="Button_Click_2"/>
+        <Label Content="OriginY" HorizontalAlignment="Left" Margin="20,285,0,0" VerticalAlignment="Top"/>
+        <Label Content="ScaleY" HorizontalAlignment="Left" Margin="221,285,0,0" VerticalAlignment="Top"/>
+        <Label Name="lblObjectCount" Content="Label" HorizontalAlignment="Left" Margin="523,331,0,0" VerticalAlignment="Top" Height="26" Width="39"/>
+        <Slider Name="sliderObjectCount" HorizontalAlignment="Left" Margin="144,333,0,0" VerticalAlignment="Top" Width="374" Maximum="100" Minimum="10" SmallChange="1" Value="30" ValueChanged="sliderObjectCount_ValueChanged"/>
+        <Label Content="Object 갯수 제한" HorizontalAlignment="Left" Margin="20,329,0,0" VerticalAlignment="Top"/>
+        
+        
+
+
+
+
+
+
+
+    </Grid>
+</Window>

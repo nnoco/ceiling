@@ -1,0 +1,9 @@
+﻿<Window x:Class="KonkukCommunicationDesign.WallDisplayWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="WallDisplayWindow" Height="300" Width="300" Background="Black" KeyUp="Window_KeyUp_1" SizeChanged="Window_SizeChanged_1" MouseDoubleClick="Window_MouseDoubleClick_1" Closing="Window_Closing_1" StateChanged="Window_StateChanged_1" WindowStyle="None" ResizeMode="NoResize">
+    <Canvas Name="CanvasForObject" HorizontalAlignment="Left" VerticalAlignment="Top">
+        <Image Name="WallDisplay" Stretch="Fill"/>
+        <Label Name="log" Background="Black" Foreground="White" Content="log.." Canvas.Top="-28"/>
+    </Canvas>
+</Window>
